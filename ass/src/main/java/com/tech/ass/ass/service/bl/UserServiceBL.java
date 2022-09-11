@@ -16,32 +16,29 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class UserServiceBL {
-	
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-    
-    @Autowired
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Autowired
 	UserTransfromer userTransfromer;
-    
-    @Autowired
-    UserDao userDao;
-	
-    public String getEncodedPassword(String password) {
-        return passwordEncoder.encode(password);
-    }
-    
+
+	@Autowired
+	UserDao userDao;
+
+	public String getEncodedPassword(String password) {
+		return passwordEncoder.encode(password);
+	}
+
 	public UserDto registerNewUser(UserDto user) {
 		log.info("UserServiceBL.registerNewUser() invoked.");
 		user.setPassword(getEncodedPassword(user.getPassword()));
-	        return userDao.registerNewUser(user);
+		return userDao.registerNewUser(user);
 	}
 
 	public List<UserDto> getAllUsers() {
-		// TODO Auto-generated method stub
 		log.info("UserServiceBL.getAllUsers() invoked.");
 		return userDao.getAllUsers();
 	}
-	
-	
 
 }

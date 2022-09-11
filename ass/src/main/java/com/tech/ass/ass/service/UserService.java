@@ -3,10 +3,8 @@ package com.tech.ass.ass.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.tech.ass.ass.domain.User;
 import com.tech.ass.ass.dto.ResponseDto;
 import com.tech.ass.ass.dto.UserDto;
 import com.tech.ass.ass.service.bl.UserServiceBL;
