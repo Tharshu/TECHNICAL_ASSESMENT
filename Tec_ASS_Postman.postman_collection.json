@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "409345d6-6a93-4cca-8520-81463cdd2de5",
+		"name": "Tec_ASS_Postman",
+		"description": "## API Documentation\r\nThis collection contains three request from this Technical assesment.\r\n\r\n### It contains following requests\r\n#### 1. CreateUser ->  /v1/auth/registerNewUser\r\n#### 2. GetAllUsers -> /v1/auth/getAll\r\n#### 3. Authentication -> /v1/jwt/authenticate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9091/v1/auth/getAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyZW1pdEBjb2RlLmNvbSIsImV4cCI6MTY2Mjg0ODM1OCwiaWF0IjoxNjYyODMwMzU4fQ.suGULEgu4gXxspiMFLoMH0Cd9LAGJ8N4YQ2JAESzc2ZDx_YWYHn4UFRpsEbFxf812L7Fm4Lqyq4y6iRJM7AIHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9091/v1/auth/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"v1",
+						"auth",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/v1/jwt/authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"remit@code.com\",\r\n    \"userPassword\": \"Test_1user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/v1/jwt/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"v1",
+						"jwt",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/v1/auth/registerNewUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rem\",\r\n    \"email\": \"bab2u@code.com\",\r\n    \"mobile\" : \"0778427895\",\r\n    \"password\" : \"Test_1user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/v1/auth/registerNewUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"v1",
+						"auth",
+						"registerNewUser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
